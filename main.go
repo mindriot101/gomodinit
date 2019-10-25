@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
-	"path"
+	"path/filepath"
 
 	"github.com/spf13/cobra"
 )
@@ -22,7 +22,7 @@ func calculateModStub() (string, error) {
 		return "", err
 	}
 
-	return path.Base(dir), nil
+	return filepath.Base(dir), nil
 }
 
 func gomodinit(cmd *cobra.Command, args []string) {
